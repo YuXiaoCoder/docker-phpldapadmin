@@ -1,0 +1,21 @@
+version: '2'
+
+networks:
+  openldap:
+    driver: bridge
+
+services:
+  ldapadmin:
+    image: docker-phpldapadmin:latest
+    container_name: ldapadmin
+    restart: always
+    privileged: true
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: 'openldap'
+      PHPLDAPADMIN_HTTPS: false
+    ports:
+      - 80:80
+    volumes:
+      - /data/phpldapadmin/config.php:/etc/phpldapadmin/config.php
+    networks:
+      - openldap
