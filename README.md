@@ -17,15 +17,15 @@ rsync -azPS --delete --exclude="*.git*" docker-phpldapadmin VPN:/root/
 + 构建镜像：
 
 ```bash
-cd /root/docker-openldap
+cd /root/docker-phpldapadmin
 docker build --no-cache --tag docker-phpldapadmin .
 ```
 
 + 配置文件：
 
 ```bash
-mkdir -p /data/phpldapadmin/
-cp -f /root/docker-openldap/configuration/config.php /data/phpldapadmin/
+mkdir -p /data/ldapadmin/
+cp -f /root/docker-phpldapadmin/configuration/config.php /data/ldapadmin/
 ```
 
 + 启动容器：
@@ -37,7 +37,7 @@ docker-compose up -d
 + 进入容器：
 
 ```bash
-docker exec -it openldap bash
+docker exec -it ldapadmin bash
 ```
 
 ***

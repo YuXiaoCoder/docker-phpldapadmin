@@ -16,6 +16,6 @@ services:
     ports:
       - 80:80
     volumes:
-      - /data/phpldapadmin/config.php:/etc/phpldapadmin/config.php
+      - /data/ldapadmin/config.php:/etc/phpldapadmin/config.php
     networks:
       - openldap
