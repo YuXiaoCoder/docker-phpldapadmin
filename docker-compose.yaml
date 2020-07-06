@@ -12,7 +12,7 @@ services:
     privileged: true
     environment:
       PHPLDAPADMIN_LDAP_HOSTS: 'openldap'
-      PHPLDAPADMIN_HTTPS: false
+      PHPLDAPADMIN_HTTPS: "false"
     ports:
       - 80:80
     volumes:
